@@ -1,0 +1,116 @@
+╔════════════════════════════════════════════════════════════════╗
+║         BOT FUNCIONANDO - PRÓXIMOS PASOS                       ║
+╚════════════════════════════════════════════════════════════════╝
+
+✅ EL BOT ESTÁ ACTIVO Y ESPERANDO CONEXIÓN
+
+┌────────────────────────────────────────────────────────────────┐
+│                                                                │
+│ 1. ABRE WHATSAPP EN TU TELÉFONO                              │
+│                                                                │
+│ 2. Ve a: Dispositivos vinculados                             │
+│    (En el menú ≡ de WhatsApp)                                │
+│                                                                │
+│ 3. Haz clic en "Conectar dispositivo"                        │
+│                                                                │
+│ 4. APUNTA LA CÁMARA AL QR CODE                               │
+│    (El que se muestra en la terminal)                        │
+│                                                                │
+│ 5. ESPERA A QUE SE SINCRONICE                                │
+│    (Verás un mensaje: "✅ WhatsApp conectado")              │
+│                                                                │
+│ 6. ENVIATE UN MENSAJE DE PRUEBA                             │
+│    Intenta: "Hola"                                           │
+│            "¿Qué servicios tienen?"                          │
+│            "Quiero agendar una cita"                         │
+│                                                                │
+└────────────────────────────────────────────────────────────────┘
+
+════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE:
+
+• La terminal DEBE permanecer abierta
+• El bot solo funciona mientras corre en terminal
+• Si cierras la terminal, el bot se detiene
+• Para detener el bot: Ctrl+C
+• Para reiniciar: node chatbot-simple.js
+
+════════════════════════════════════════════════════════════════
+
+📊 ARCHIVOS ACTIVOS:
+
+Versión actual: chatbot-simple.js
+• Más estable que chatbot.js
+• Incluye logging completo
+• Manejo de errores mejorado
+• Historial de conversaciones
+• Integración completa con OpenAI
+
+Log file: chatbot-debug.log
+• Registra todos los eventos
+• Útil para troubleshooting
+• Se crea automáticamente
+
+════════════════════════════════════════════════════════════════
+
+🔍 VER LOS LOGS:
+
+En otra terminal (sin cerrar la actual), ejecuta:
+
+  Get-Content -Path "chatbot-debug.log" -Tail 20
+
+Esto muestra los últimos 20 eventos del bot.
+
+════════════════════════════════════════════════════════════════
+
+✨ CUANDO FUNCIONA CORRECTAMENTE:
+
+1. Terminal muestra: "✅ WhatsApp conectado correctamente"
+2. Log file muestra todos los mensajes recibidos
+3. El bot responde en menos de 5 segundos
+4. Las respuestas incluyen información del negocio
+
+════════════════════════════════════════════════════════════════
+
+❌ SI NO FUNCIONA:
+
+Error: "Execution context was destroyed"
+→ Es problema de Puppeteer
+→ Ejecuta: node chatbot-simple.js (versión simplificada)
+
+Mensaje no recibido:
+→ Verifica que es conversación PRIVADA, no grupo
+→ Revisa chatbot-debug.log
+→ Asegúrate que WhatsApp está conectado
+
+La IA no responde:
+→ Revisa que tu API key OpenAI es correcta
+→ Ejecuta: node test-services.js
+→ Verifica conexión a internet
+
+════════════════════════════════════════════════════════════════
+
+🎯 PRÓXIMOS PASOS DESPUÉS DE VERIFICAR:
+
+1. Crear archivo .env con variables en producción
+2. Agregar base de datos SQLite
+3. Implementar sistema de citas automáticas
+4. Integrar pagos (MercadoPago/Stripe)
+5. Deploy a Railway o Render
+
+Para más info: Lee ADVANCED.md
+
+════════════════════════════════════════════════════════════════
+
+¡ESTÁS LISTO! 🚀
+
+Tu bot de WhatsApp con IA está:
+✅ Instalado
+✅ Configurado  
+✅ Activo
+✅ Esperando conexión
+
+Ahora necesitas escanear el QR Code con WhatsApp.
+
+════════════════════════════════════════════════════════════════

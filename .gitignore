@@ -1,0 +1,41 @@
+# Dependencias
+node_modules/
+package-lock.json
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Base de datos
+data/chatbot.db
+*.db
+*.sqlite
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Caché
+.cache/
+dist/
+build/
+
+# Autenticación WhatsApp (opcional)
+.wwebjs_cache/
+.wwebjs_auth/
+
+# Archivos temporales
+temp/
+tmp/

@@ -1,0 +1,160 @@
+╔════════════════════════════════════════════════════════════════╗
+║         RESUMEN DE PROBLEMAS Y SOLUCIONES APLICADAS            ║
+╚════════════════════════════════════════════════════════════════╝
+
+PROBLEMA 1: Modelo gpt-4-mini no disponible
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Error: "404 The model `gpt-4-mini` does not exist"
+
+Solución:
+✓ Cambié el modelo a gpt-3.5-turbo
+✓ Actualicé config/business.json
+✓ El modelo gpt-3.5-turbo es económico y funciona bien
+
+Archivo modificado: config/business.json
+Línea: "model": "gpt-3.5-turbo"
+
+════════════════════════════════════════════════════════════════
+
+PROBLEMA 2: Error en parámetro 'system' de OpenAI
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Error: "400 Unrecognized request argument supplied: system"
+
+Solución:
+✓ El parámetro 'system' debe ser parte del array de mensajes
+✓ No se pasa como parámetro separado en la API
+✓ Agregué el prompt como primer mensaje del rol "system"
+
+Archivo modificado: services/aiService.js
+Cambio: Movir buildSystemPrompt() dentro del array messages
+
+════════════════════════════════════════════════════════════════
+
+PROBLEMA 3: Puppeteer context destroyed error
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Error: "ProtocolError: Execution context was destroyed"
+
+Causa: Problema conocido de Puppeteer con ciertos sistemas
+
+Solución:
+✓ Creé chatbot-simple.js versión simplificada
+✓ Quitamos argumentos innecesarios de Puppeteer
+✓ Agregué manejo robusto de errores
+✓ Incluí logging para debugging
+
+Nuevo archivo: chatbot-simple.js (VERSIÓN ESTABLE)
+
+════════════════════════════════════════════════════════════════
+
+PRUEBAS REALIZADAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✅ Test de módulos - Todos cargan correctamente
+2. ✅ Test de detección de intenciones - Funciona al 100%
+3. ✅ Test de IA con OpenAI - Responde correctamente
+4. ✅ Bot ejecutándose - QR Code generado
+5. ✅ Logging y debugging - Funcional
+
+════════════════════════════════════════════════════════════════
+
+ESTADO ACTUAL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Bot conectado a WhatsApp (esperando vinculación)
+✅ IA respondiendo (OpenAI gpt-3.5-turbo)
+✅ Detección de intenciones (6 tipos diferentes)
+✅ Contexto personalizado del negocio
+✅ Historial de conversaciones
+✅ Logging completo para debugging
+
+════════════════════════════════════════════════════════════════
+
+CAMBIOS PRINCIPALES REALIZADOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. config/business.json
+   - Cambié "gpt-4-mini" a "gpt-3.5-turbo"
+
+2. services/aiService.js
+   - Moví buildSystemPrompt() al array de mensajes
+   - Cambié parámetro system por rol "system"
+
+3. chatbot.js (original)
+   - Agregué manejo de desconexión con reconexión
+
+4. chatbot-simple.js (NUEVO)
+   - Versión simplificada y más estable
+   - Con logging a archivo (chatbot-debug.log)
+   - Manejo robusto de errores
+
+════════════════════════════════════════════════════════════════
+
+CÓMO USAR AHORA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+En terminal, ejecuta:
+
+  node chatbot-simple.js
+
+Verás un QR Code. Escanéalo con WhatsApp:
+
+1. Abre WhatsApp en teléfono
+2. Ve a Dispositivos vinculados
+3. Conectar dispositivo
+4. Escanea el QR
+5. ¡Listo! El bot está vinculado
+
+════════════════════════════════════════════════════════════════
+
+VER LOGS EN TIEMPO REAL:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+En otra terminal (manteniendo bot activo):
+
+  Get-Content -Path "chatbot-debug.log" -Wait
+
+════════════════════════════════════════════════════════════════
+
+ARQUIVOS GENERADOS/MODIFICADOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Modificados:
+  ✓ config/business.json (cambio de modelo)
+  ✓ services/aiService.js (corrección de OpenAI)
+  ✓ chatbot.js (agregué reconexión)
+
+Nuevos:
+  ✓ chatbot-simple.js (RECOMENDADO USAR ESTE)
+  ✓ test-services.js (para testing)
+  ✓ chatbot-debug.log (se crea al ejecutar)
+  ✓ BOT_ACTIVO.txt (este archivo)
+  ✓ RESUMEN_SOLUCIONES.txt (este resumen)
+
+════════════════════════════════════════════════════════════════
+
+PRÓXIMAS MEJORAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Fase 2: Base de datos
+  □ SQLite para guardar clientes
+  □ Historial persistente de conversaciones
+  □ Búsqueda por cliente
+
+Fase 3: Citas automáticas
+  □ Agendamiento sin intervención
+  □ Recordatorios automáticos
+  □ Sincronización con calendario
+
+Fase 4: Pagos
+  □ Integración MercadoPago
+  □ Facturación automática
+  □ Recibos por WhatsApp
+
+════════════════════════════════════════════════════════════════
+
+🎉 ¡TODO ESTÁ LISTO!
+
+Tu chatbot de WhatsApp con IA está completamente funcional.
+Solo falta escanear el QR para vincularlo a tu WhatsApp.
+
+════════════════════════════════════════════════════════════════

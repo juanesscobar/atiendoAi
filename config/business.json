@@ -1,0 +1,57 @@
+{
+  "name": "Milo's Shop",
+  "description": "Auto SPA",
+  "phone": "+5691234567",
+  "email": "contacto@tunegocio.com",
+  "website": "https://tunegocio.com",
+  
+  "services": [
+    {
+      "id": 1,
+      "name": "Consulta Inicial",
+      "description": "Primera consulta sin costo",
+      "price": 0,
+      "duration": 30,
+      "durationUnit": "minutos"
+    },
+    {
+      "id": 2,
+      "name": "Servicio Premium",
+      "description": "Servicio completo con seguimiento",
+      "price": 150,
+      "duration": 1,
+      "durationUnit": "horas"
+    },
+    {
+      "id": 3,
+      "name": "Paquete Mensual",
+      "description": "Acceso ilimitado durante 30 días",
+      "price": 500,
+      "duration": 1,
+      "durationUnit": "mes"
+    }
+  ],
+
+  "schedule": {
+    "timezone": "America/Mexico_City",
+    "workDays": ["lunes", "martes", "miércoles", "jueves", "viernes"],
+    "businessHours": {
+      "start": "09:00",
+      "end": "18:00"
+    },
+    "offDays": ["sábado", "domingo"]
+  },
+
+  "policies": {
+    "cancellation": "Se pueden cancelar citas hasta 24 horas antes",
+    "paymentMethods": ["transferencia", "efectivo", "tarjeta"],
+    "warranty": "Garantía de satisfacción o devolución de dinero"
+  },
+
+  "aiConfig": {
+    "model": "gpt-3.5-turbo",
+    "temperature": 0.7,
+    "maxTokens": 500,
+    "language": "es"
+  }
+}
